@@ -13,10 +13,10 @@
       </router-link>
     </li>
     <li>
-      <router-link to="//127.0.0.1:3000">
-        도서리스트
+      <a href="//127.0.0.1:3000">
+        도서관리
         <small>(Express)</small>
-      </router-link>
+      </a>
     </li>
   </ul>
 </template>
