@@ -13,12 +13,18 @@ const routes = [
     component: List,
   },
   {
-    path: "/infinite",
+    path: "/list/:page",
+    name: "List",
+    component: List,
+    props: true,
+  },
+  {
+    path: "/infinite/:page",
     name: "ListInfinite",
     component: ListInfinite,
   },
   {
-    path: "/view",
+    path: "/view/:idx",
     name: "View",
     component: View,
   },
