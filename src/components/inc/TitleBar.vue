@@ -14,7 +14,7 @@
         아래의 링크를 클릭하세요.
       </p>
 
-      <b-button variant="primary" href="#">
+      <b-button variant="primary" :href="expressLink" target="_blank">
         Express 도서 관리 시스템 바로가
       </b-button>
     </b-jumbotron>
@@ -22,8 +22,16 @@
 </template>
 
 <script>
+const { VUE_APP_EXPRESS } = process.env;
+// import { EXPRESS } from "@/modules/common";
+
 export default {
   name: "TitleBar",
+  data() {
+    return {
+      expressLink: VUE_APP_EXPRESS,
+    };
+  },
 };
 </script>
 
