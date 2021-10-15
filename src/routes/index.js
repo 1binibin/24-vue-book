@@ -1,20 +1,26 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import View from "../views/View.vue";
+import List from "../views/List.vue";
+import ListInfinite from "../views/ListInfinite.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "List",
+    component: List,
   },
   {
-    path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/infinite",
+    name: "ListInfinite",
+    component: ListInfinite,
+  },
+  {
+    path: "/view",
+    name: "View",
+    component: View,
   },
 ];
 
