@@ -15,7 +15,7 @@
       </p>
 
       <b-button variant="primary" :href="expressLink" target="_blank">
-        Express 도서 관리 시스템 바로가
+        Express 도서 관리 시스템 바로가기
       </b-button>
     </b-jumbotron>
   </div>

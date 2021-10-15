@@ -17,7 +17,7 @@
         <TrCp v-for="book in GET_BOOKS.books" :key="book.idx" :book="book" />
       </tbody>
     </table>
-    <PagerCp :v="GET_BOOKS.pager" />
+    <PagerCp :pager="GET_BOOKS.pager" />
   </div>
 </template>
 
@@ -31,6 +31,12 @@ export default {
   components: { TrCp, PagerCp },
   computed: {
     ...mapGetters(["GET_BOOKS"]),
+  },
+  beforeUpdate() {
+    this.$store.dispatch("ACT_LOADING", true);
+  },
+  updated() {
+    this.$store.dispatch("ACT_LOADING", false);
   },
 };
 </script>

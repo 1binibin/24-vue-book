@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import View from "../views/View.vue";
 import List from "../views/List.vue";
 import ListInfinite from "../views/ListInfinite.vue";
+import View from "../views/View.vue";
 
 Vue.use(VueRouter);
 
@@ -13,10 +13,8 @@ const routes = [
     component: List,
   },
   {
-    path: "/list/:page",
-    name: "List",
-    component: List,
-    props: true,
+    path: "/infinite",
+    redirect: "/infinite/1",
   },
   {
     path: "/infinite/:page",

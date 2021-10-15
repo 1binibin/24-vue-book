@@ -8,13 +8,11 @@
 import TableCp from "@/components/common/TableCp";
 
 export default {
-  name: "PagerCp",
+  name: "PaginationCp",
   components: { TableCp },
   props: ["page"],
   created() {
-    console.log(this);
-    console.log(this.page);
-    this.$store.dispatch("ACT_BOOKS", this.page);
+    this.$store.dispatch("ACT_BOOKS", 1);
   },
 };
 </script>

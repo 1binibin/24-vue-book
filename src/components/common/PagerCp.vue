@@ -1,22 +1,77 @@
 <template>
-  <div class="pager-wrap">
-    <a href="/?page=1" class="pager fa fa-step-backward"></a>
-    <a href="/?page=1" class="pager fa fa-backward"></a>
-    <a href="/?page=1" class="pager fa fa-caret-left"></a>
-    <a href="/?page=1" class="pager active">1</a>
-    <a href="/?page=1" class="pager">2</a>
-    <a href="/?page=1" class="pager fa fa-caret-right"></a>
-    <a href="/?page=1" class="pager fa fa-forward"></a>
-    <a href="/?page=1" class="pager fa fa-step-forward"></a>
-  </div>
+  <ul class="pager-wrap">
+    <li @click="changePage" :data-page="firstPage" class="pager">
+      <i class="fa fa-step-backward"></i>
+    </li>
+    <li @click="changePage" :data-page="prevPager" class="pager">
+      <i class="fa fa-backward"></i>
+    </li>
+    <li @click="changePage" :data-page="prevPage" class="pager">
+      <i class="fa a fa-caret-left"></i>
+    </li>
+    <li
+      v-for="v in pageArr"
+      :data-page="v"
+      :key="v"
+      :class="`pager ${page === v ? 'active' : ''}`"
+      @click="changePage"
+    >
+      {{ v }}
+    </li>
+    <li @click="changePage" :data-page="nextPage" class="pager">
+      <i class="fa fa-caret-right"></i>
+    </li>
+    <li @click="changePage" :data-page="nextPager" class="pager">
+      <i class="fa fa-forward"></i>
+    </li>
+    <li @click="changePage" :data-page="lastPage" class="pager">
+      <i class="fa fa-step-forward"></i>
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   name: "PagerCp",
   props: ["pager"],
-  created() {
-    console.log(this.pager);
+  data() {
+    return {
+      prevPager: 1,
+      prevPage: 1,
+      nextPager: 1,
+      nextPage: 1,
+      firstPage: 1,
+      lastPage: 1,
+      pageArr: [],
+      page: 1,
+    };
+  },
+  watch: {
+    pager: function (v) {
+      if (v) {
+        this.prevPager = v.prevPager;
+        this.prevPage = v.prevPage;
+        this.nextPager = v.nextPager;
+        this.nextPage = v.nextPage;
+        this.lastPage = v.totalPage;
+        this.page = v.page;
+        this.pageArr = [];
+        for (let i = v.startPage; i <= v.endPage; i++) {
+          this.pageArr.push(i);
+        }
+      }
+    },
+  },
+  methods: {
+    changePage(e) {
+      const _page = e.currentTarget.dataset["page"];
+      if (this.page != _page) {
+        this.$store.dispatch("ACT_BOOKS", _page);
+        console.log("this.page: ", this.page);
+        console.log("_page: ", _page);
+        console.log();
+      }
+    },
   },
 };
 </script>
@@ -26,6 +81,7 @@ export default {
   margin: 2em auto;
   @include flex($h: center);
   .pager {
+    cursor: pointer;
     padding: 0.625em 0.875em;
     border: 1px solid $success-color;
     margin-right: -1px;
