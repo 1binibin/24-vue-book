@@ -1,5 +1,5 @@
 <template>
-  <h1>List</h1>
+  <section class="wrapper list-wrapper"></section>
 </template>
 
 <script>
@@ -7,6 +7,7 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "ListCp",
+  components: {},
   computed: {
     ...mapGetters(["GET_BOOKS"]),
   },
