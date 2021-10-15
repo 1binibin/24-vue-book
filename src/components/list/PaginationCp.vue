@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TableCp from "./inc/TableCp";
+import TableCp from "@/components/TableCp";
 
 export default {
   name: "PagerCp",

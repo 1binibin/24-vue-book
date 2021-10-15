@@ -23,7 +23,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import TrCp from "../TrCp.vue";
+import TrCp from "../components/TrCp.vue";
 
 export default {
   name: "TableCp",
