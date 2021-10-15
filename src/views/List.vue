@@ -1,12 +1,12 @@
 <template>
-  <ListCp />
+  <PagerCp />
 </template>
 
 <script>
-import ListCp from "../components/ListCp.vue";
+import PagerCp from "../components/PagerCp.vue";
 
 export default {
   name: "List",
-  components: { ListCp },
+  components: { PagerCp },
 };
 </script>

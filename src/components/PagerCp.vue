@@ -1,13 +1,16 @@
 <template>
-  <section class="wrapper list-wrapper"></section>
+  <section class="wrapper list-wrapper">
+    <TableCp />
+  </section>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import TableCp from "./inc/TableCp";
 
 export default {
-  name: "ListCp",
-  components: {},
+  name: "PagerCp",
+  components: { TableCp },
   computed: {
     ...mapGetters(["GET_BOOKS"]),
   },
@@ -23,4 +26,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.list-wrapper {
+}
+</style>
