@@ -67,9 +67,6 @@ export default {
       const _page = e.currentTarget.dataset["page"];
       if (this.page != _page) {
         this.$store.dispatch("ACT_BOOKS", _page);
-        console.log("this.page: ", this.page);
-        console.log("_page: ", _page);
-        console.log();
       }
     },
   },
