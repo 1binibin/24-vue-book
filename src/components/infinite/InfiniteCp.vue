@@ -2,16 +2,18 @@
   <section class="wrapper list-wrapper">
     <TableCp :isPager="false" :books="books" />
     <div v-observe="changeVisible" />
+    <BtTop />
   </section>
 </template>
 
 <script>
 import TableCp from "@/components/common/TableCp";
+import BtTop from "@/components/common/BtTop.vue";
 import { mapGetters } from "vuex";
 
 export default {
   name: "InfiniteCp",
-  components: { TableCp },
+  components: { TableCp, BtTop },
   data() {
     return {
       page: 1,
