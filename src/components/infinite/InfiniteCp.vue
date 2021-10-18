@@ -22,7 +22,7 @@ export default {
   computed: {
     ...mapGetters(["GET_BOOKS"]),
     lastPage() {
-      return this.GET_BOOKS.pager ? this.GET_NOOKS.pager.totalPage : 10000;
+      return this.GET_BOOKS.pager ? this.GET_BOOKS.pager.totalPage : 10000;
     },
   },
   watch: {
