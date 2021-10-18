@@ -4,9 +4,9 @@
     <InfoTxt :data="title" :styled="styled" />
     <InfoTxt :data="writer" :styled="styled" />
     <InfoTxt :data="date" :styled="styled" />
-    <InfoTxt :data="stauts" :styled="styled" />
+    <InfoTxt :data="status" :styled="styled" />
     <InfoTxt :data="content" :styled="styled" />
-    <InfoImg :data="cover" :styled="styled" v-show="GET_BOOK.cover" />
+    <InfoImg :data="cover" :styled="styled" v-show="cover" />
     <InfoImg :data="upfile" :styled="styled" v-show="upfile" />
     <div class="bt-wrap">
       <button class="btn btn-success bt-back" @click="goBack">리스트</button>
