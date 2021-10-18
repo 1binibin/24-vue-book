@@ -1,5 +1,8 @@
 <template>
-  <h1>View</h1>
+  <section class="wrapper view-wrapper">
+    <InfoTxt :title="title" :content="content" :styled="{ padding: '1em' }" />
+    <InfoImg :title="title" :src="content" :styled="{ padding: '1em' }" />
+  </section>
 </template>
 
 <script>
