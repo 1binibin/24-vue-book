@@ -7,7 +7,7 @@
       <i class="fa fa-backward"></i>
     </li>
     <li @click="changePage" :data-page="prevPage" class="pager">
-      <i class="fa a fa-caret-left"></i>
+      <i class="fa fa-caret-left"></i>
     </li>
     <li
       v-for="v in pageArr"
@@ -64,9 +64,9 @@ export default {
   },
   methods: {
     changePage(e) {
-      const _page = e.currentTarget.dataset["page"];
-      if (this.page != _page) {
-        this.$store.dispatch("ACT_BOOKS", _page);
+      const page = e.currentTarget.dataset["page"];
+      if (this.page != page) {
+        this.$store.dispatch("ACT_BOOKS", { page });
       }
     },
   },
