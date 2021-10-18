@@ -1,14 +1,19 @@
 <template>
   <div class="info-wrap" :style="style">
-    <div class="title">{{ title }}</div>
+    <div class="title">{{ data.title }}</div>
     <div class="content">
-      <img :src="content" :alt="title" class="img" />
+      <div v-if="data.content">
+        <img :src="data.content" :alt="data.title" class="img" />
+      </div>
+      <div v-if="data.fileName">
+        <a :href="data.filePath">{{ data.fileName }}</a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import mixinInfo from "@/components/mixins/mixininfo";
+import mixinInfo from "@/components/mixins/mixinInfo";
 
 export default {
   name: "InfoImg",
@@ -18,6 +23,7 @@ export default {
 
 <style lang="scss">
 .info-wrap {
+  border-bottom: 1px solid $light-color;
   @include flex;
   .title {
     color: $primary-color;
