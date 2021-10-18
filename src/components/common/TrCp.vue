@@ -1,9 +1,9 @@
 <template>
   <tr>
     <td>{{ book.idx }}</td>
-    <td class="text-left">{{ book.title }}</td>
-    <td>{{ book.writer }}</td>
-    <td>{{ book.content }}</td>
+    <td @click="goView">{{ book.title }}</td>
+    <td @click="goView">{{ book.writer }}</td>
+    <td @click="goView">{{ book.content }}</td>
     <td>
       <div v-if="cover">
         <img :src="cover" class="icon-cover" />
@@ -30,12 +30,26 @@ export default {
       return moment(this.book.createdAt).format("YYYY년 MM월");
     },
   },
+  methods: {
+    goView() {
+      this.$router.push("/view/" + this.book.idx);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 tr {
   td {
+    &:nth-child(2),
+    &:nth-child(4) {
+      text-align: left;
+    }
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      cursor: pointer;
+    }
     padding: 0.5em 0;
     vertical-align: middle;
     .icon-cover {

@@ -1,7 +1,7 @@
 <template>
   <div class="tbl-wrap">
     <!-- table -->
-    <table class="table">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>번호</th>
