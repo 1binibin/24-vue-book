@@ -22,7 +22,12 @@ export default {
   data() {
     return {
       styled: { padding: "1em" },
+      idx: null,
     };
+  },
+  created() {
+    this.idx = this.$route.params.idx;
+    this.$store.dixpatch("ACT_BOOK", this.idx);
   },
 };
 </script>

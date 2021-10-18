@@ -32,7 +32,11 @@ export default {
   },
   methods: {
     goView() {
-      this.$router.push("/view/" + this.book.idx);
+      if (this.$route.name === "List") {
+        this.$router.push("/view/" + this.book.idx);
+      } else {
+        return 0;
+      }
     },
   },
 };
