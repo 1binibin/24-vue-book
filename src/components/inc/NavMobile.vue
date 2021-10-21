@@ -16,7 +16,7 @@
           </router-link>
         </li>
         <li>
-          <a href="//15.164.120.166:3000">
+          <a href="//1bin.kr">
             도서관리
             <small>(Express)</small>
           </a>
