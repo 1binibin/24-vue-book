@@ -13,7 +13,7 @@
       </router-link>
     </li>
     <li>
-      <a href="//127.0.0.1:3000">
+      <a href="//15.164.120.166:3000">
         도서관리
         <small>(Express)</small>
       </a>
