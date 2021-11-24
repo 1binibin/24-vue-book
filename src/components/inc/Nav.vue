@@ -13,7 +13,7 @@
       </router-link>
     </li>
     <li>
-      <a href="//1bin.kr">
+      <a href="//1bin.kr/book">
         도서관리
         <small>(Express)</small>
       </a>
