@@ -1,24 +1,37 @@
-# 24.vue-book
+# 도서 관리 시스템 - Vue.js
 
-## Project setup
-```
-npm install
-```
+# 사용 기술
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- HTML
+- CSS3
+- Sass
+- Javascript(ES6+)
+- Vue.js
+- Vuex
+- ES Lint
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# 배포
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Firebase
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 사용한 오픈 API 소스
+
+- axios
+- bootstrap-vue
+- core-js
+- moment
+- vue-loading-overlay
+- vue-observe-visibility
+- vue-router
+
+# 구현 내용
+
+1. Api Server 와 통신
+2. Vuex를 통한 상태 관리
+3. Pagination의 리스트
+4. 무한스크롤(Infinite Scroll)의 리스트
+5. vue-router를 이용한 페이지 이동
+6. Sass를 사용한 디자인 및 반응형 웹 사이트
+
+## [Back Server](https://1bin.kr/book)
+## [Back Server Git](https://github.com/1binibin/2021-15-sql)
